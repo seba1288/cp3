@@ -2,7 +2,6 @@ public class StudentTest {
     public static void main(String[] args) {
         System.out.println("Hello worlds");
         Student s = new Student();
-        Student w = new Student();
         s.name = "seba";
         s.age = 20;
         s.id = 231419;
