@@ -14,4 +14,5 @@ public class CinemaTicket {
                 "Seat: " + seat + "\n" +
                 "Price: " + price;
     }
+
 }
