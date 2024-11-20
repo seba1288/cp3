@@ -1,14 +1,17 @@
 public class task25 {
+    public int  hours = 14;
+    public int minutes = 27;
+    public void time() {
+        System.out.println("Time: " + hours + ":" + minutes);
+        System.out.println("Minutes from midnight: " + (minutes));
+        System.out.println("Seconds from midnight: " + (minutes * 60));
+    }
+
     public static void main(String[] args) {
-        int hours = 14;
-        int minutes = 27;
-
-        System.out.printf("time: %02d:%02d%n", hours, minutes);
-
-        int minutesFromMidnight = hours * 60 + minutes;
-        int secondsFromMidnight = minutesFromMidnight * 60;
-
-        System.out.println("minutes from midnight: " + minutesFromMidnight);
-        System.out.println("seconds from midnight: " + secondsFromMidnight);
+        task25 time = new task25();
+        time.time();
     }
 }
+
+
+
