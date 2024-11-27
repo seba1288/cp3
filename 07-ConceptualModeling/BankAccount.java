@@ -21,15 +21,22 @@ public class BankAccount {
     
     public void deposit(double amount) {
         balance += amount;
-        transactionsHistory[transactionCount] ="Deposit of " + String.valueOf(amount);
-        transactionCount++;   
+        transactionsHistory[transactionCount] ="Deposit of " + amount;
+        if ( transactionCount > 2) {
+            transactionCount = 0;
+        }
+        transactionCount++;
     }
     
     public void withdraw(double amount) {
         if (amount <= 500) {
             if(balance >= amount) {
             balance -= amount;
+            if ( transactionCount > 2) {
+                transactionCount = 0;
+            }
             transactionsHistory[transactionCount] ="Withdrawal of " + String.valueOf(amount); 
+            
             transactionCount++;   
 
         }
@@ -43,7 +50,8 @@ public class BankAccount {
     };
 
     public void history() {
-        for (int i = 0; i < transactionCount; i++) {
+
+        for (int i = 0; i < 3; i++) {
             System.out.println(transactionsHistory[i]);
         }
     }
@@ -54,6 +62,7 @@ public class BankAccount {
         account.withdraw(200);
         account.withdraw(600);
         account.withdraw(500);
+        account.withdraw(459);
         account.history();
     }
 }
